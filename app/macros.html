@@ -1,7 +1,14 @@
 {% macro displayNewsList(news_list) %}
 
-    {% for movie in movie_list %}
-        <li>{{ news.title}}</li>
+    {% for new in new_list %}
+        <li>{{ new.title}}</li>
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
+                <img src="{{ new.poster }}" alt="{{ new.title }} poster" class="img-responsive">
+                <li class="text-center">
+                    <a href="/new/{{new.id}}">
+                        {{ news.title|truncate(10)}}</a>
+                </li>
+            </div>
     {% endfor %}
 
 {% endmacro %}

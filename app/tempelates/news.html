@@ -1,1 +1,22 @@
-<h1> Hello News{{ id }} </h1>
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class="container">
+
+    <!-- Poster background -->
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{new.poster}}) no-repeat center center">
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-details">
+            <h3>{{ new.title }}</h3>
+
+            <p class="overview"> {{ new.name }}</p>
+            <p class="ratings"> <b> {{ new.author}}</b> - <i>{{ new.description}} description </i>-<i>{{ new.publishedAt}}  date</i></p>
+
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
