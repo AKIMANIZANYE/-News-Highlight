@@ -67,3 +67,17 @@ def get_news(id):
                 new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,poster)
 
     return new_object
+def search_new(new_name):
+    search_new_url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-18&sortBy=publishedAt&apiKey=870c6f91cc3244ac9013dcbecb84e54d?api_key={}&query={}'.format(api_key,new_name)
+    with urllib.request.urlopen(search_movie_url) as url:
+        search_new_data = url.read()
+        search_new_response = json.loads(search_new_data)
+
+        search_new_results = None
+
+        if search_new_response['results']:
+            search_new_list = search_new_response['results']
+            search_new_results = process_results(search_new_list)
+
+
+    return search_new_results 

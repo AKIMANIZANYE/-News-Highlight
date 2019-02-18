@@ -8,8 +8,19 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
+
     <!-- Content block -->
 {% block content %}
+
+
+<div class="container">
+    <form>
+        <input type="text" name="new_query" placeholder="Search for a News" class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-default">
+    </form>
+
+</div>
+
 
 <!-- Popular movie -->
 <h3> Popular News</h3>
@@ -29,3 +40,4 @@
 
 
 {% endblock%}
+
