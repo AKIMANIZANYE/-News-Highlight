@@ -1,6 +1,9 @@
 from flask import render_template,request,redirect,url_for
 from app import app
 from .request import get_news,get_new,search_new
+from .models import review
+from .forms import ReviewForm
+Review = review.Review
 @app.route('/')
 def index():
         '''
