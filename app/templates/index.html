@@ -1,12 +1,12 @@
+<!-- Content block -->
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
 <!-- Styles block -->
-from flask import render_template,request,redirect,url_for
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
-<!-- Content block -->
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
 
 
     <!-- Content block -->
@@ -22,17 +22,17 @@ from flask import render_template,request,redirect,url_for
 </div>
 
 
-<!-- Popular movie -->
+
 <h3> Popular News</h3>
 <ul>
     {{ macro.displayNewsList(popular)}}
 </ul>
-<!-- Upcoming movie  -->
+
 <h3> Upcoming News</h3>
 <ul>
     {{ macro.displayNewsList(upcoming)}}
 </ul>
-<!-- Now showing movie -->
+
 <h3>Now Showing</h3>
 <ul>
     {{ macro.displayNewsList(now_showing)}}
