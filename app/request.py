@@ -3,50 +3,49 @@ import urllib.request,json
 from .Models import News
 from app import app
 
-# News=News.News
-# source = news.source
+News=News.News
+source = News.source
 
 api_key = app.config['NEWS_API_KEY']
 source_base_url= app.config["NEWS_SOURCES_BASE_URL"]
 News_base_url = app.config["NEWS_API_BASE_URL"]
+
 def get_sources(category):
-    '''
-    Function that gets the json response to our url request
-    '''
-    get_sources_url ='https://newsapi.org/v2/sources?category&apiKey=870c6f91cc3244ac9013dcbecb84e54d'.format(category,api_key)
-    print(get_news_url)
+        '''
+        Function that gets the json response to our url request
+        '''
+        get_sources_url ='https://newsapi.org/v2/sources?category&apiKey=870c6f91cc3244ac9013dcbecb84e54d'
 
-    with urllib.request.urlopen(get_sources_url) as url:
-        get_sources_data = url.read()
-        get_sources_response = json.loads(get_sources_data)
-        news_articles = None
 
-        if get_sources_response['sources']:
-            sources_articles_list = get_sources_response['sources']
-            sources_articles = process_articles(sources_articles_list)
+        with urllib.request.urlopen(get_sources_url) as url:
+                get_sources_data = url.read()
+                get_sources_response = json.loads(get_sources_data)
+                news_articles = None
 
-            return sources_articles
+                if get_sources_response['sources']:
+                        sources_articles_list = get_sources_response['sources']
+                        sources_articles = process_articles(sources_articles_list)
+        
+        return sources_articles
 
 def process_articles(sources_list):
-    
+    print(sources_list)
     source_articles= []
-    for news_item in news_list:
+    for news_item in sources_list:
                    
-        id = news_item.get('id')
-        title = news_item.get('title')    
+        id = news_item.get('id')   
         name =news_item.get('name')
-        author=news_item.get('author')
         description=news_item.get('description')
         url=news_item.get('url')
-        urlToImage=news_item.get('urlToImage')
-        publishedAt=news_item.get('publishedAt')
-        content=news_item.get('content')
+        country=news_item.get('country')
+        language=news_item.get('language')
+        category=news_item.get('"category')
 
-        if urlToImage:
-            news_object = Source(id,title,name,author,description,url, urlToImage,publishedAt,conent)
-            news_articles.append(news_object)
+        if name:
+            news_object = source(id,name,description,url, country,language,category)
+            source_articles.append(news_object)
 
-    return news_articles
+    return source_articles
 
 def get_news(id):
     get_new_details_url = News_base_url.format(id,api_key)
@@ -66,7 +65,7 @@ def get_news(id):
             urlToImage=news_details_response.get(' urlToImage')
             publishedAt =news_details_response.get('publishedAt')
             content = news_details_response.get('content')
-            new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,poster,conent)
+            new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,conent)
 
     return new_object
 def search_new(new_name):
