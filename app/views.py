@@ -39,7 +39,7 @@ def new_review(id):
         if form.validate_on_submit():
                 title = form.title.data
                 name = form.name.data
-                new_name = Review(new.id,title,name,author,description,urlToImage,url,publishedAt,new.poster)
+                new_name = Review(new.id,title,name,author,description,urlToImage,url,publishedAt,content)
                 new_review.save_review()
                 return redirect(url_for('new',id = movie.id ))
 
