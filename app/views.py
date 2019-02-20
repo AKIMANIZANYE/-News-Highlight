@@ -10,7 +10,7 @@ def index():
         View movie page function that returns the movie details page and its data
         '''
         new=get_new(id)
-                # title = f'{new.title}'  
+               
         popular_news = get_news('popular')
         upcoming_news=get_news('upcoming')
         now_showing_news=get_news('now playing')
@@ -38,8 +38,8 @@ def new_review(id):
 
         if form.validate_on_submit():
                 title = form.title.data
-                review = form.review.data
-                new_review = Review(new.id,title,name,author,description,urlToImage,url,publishedAt,new.poster)
+                name = form.name.data
+                new_name = Review(new.id,title,name,author,description,urlToImage,url,publishedAt,new.poster)
                 new_review.save_review()
                 return redirect(url_for('new',id = movie.id ))
 
