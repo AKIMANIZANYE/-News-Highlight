@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from app import app
-from .request import get_reviews,get_news,search_new
+from .request import get_news,search_new
 from .Models import reviews
 from .forms import ReviewForm
 Review = reviews.Review
@@ -9,7 +9,7 @@ def index():
         '''
         View movie page function that returns the movie details page and its data
         '''
-        new=get_new(id)
+        new=get_news(id)
                
         popular_news = get_news('popular')
         upcoming_news=get_news('upcoming')
