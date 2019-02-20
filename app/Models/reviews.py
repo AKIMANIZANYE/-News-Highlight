@@ -2,7 +2,7 @@ class Review:
 
     all_reviews = []
 
-    def __init__(self,news_id,title,name,author,description,url, urlToImage,publishedAt):
+    def __init__(self,news_id,title,name,author,description,url, urlToImage,publishedAt,content):
         self.new_id = new_id
         self.title = title
         self.name= name
@@ -11,6 +11,7 @@ class Review:
         self.url=link
         self.  urlToImage= imageurl
         self.publishedAt = date
+        self.content=content
        
 
     def save_review(self):

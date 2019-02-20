@@ -23,14 +23,14 @@ def get_sources(category):
 
                 if get_sources_response['sources']:
                         sources_articles_list = get_sources_response['sources']
-                       sources_articles = process_articles(sources_articles_list)
+                        sources_articles = process_articles(sources_articles_list)
         
         return sources_articles
 
 def process_articles(sources_list):
     
        source_articles= []
-        for news_item in news_list:
+       for news_item in news_list:
                 
                 id = news_item.get('id')
                 title = news_item.get('title')
@@ -40,11 +40,11 @@ def process_articles(sources_list):
                 url=news_item.get('url')
                 urlToImage=news_item.get('urlToImage')
                 publishedAt=news_item.get('publishedAt')
-               content=news_item.get('content')
+                content=news_item.get('content')
 
                 if urlToImage:
                        news_object = Source(id,title,name,author,description,url, urlToImage,publishedAt)
-                     news_articles.append(news_object)
+                       news_articles.append(news_object)
 
         return news_articles
 
@@ -65,7 +65,7 @@ def get_new(id):
                         url=news_details_response.get('url')
                         urlToImage=news_details_response.get(' urlToImage')
                         publishedAt =news_details_response.get('publishedAt')
-                       content = news_details_response.get('content')
+                        content = news_details_response.get('content')
                         new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,poster)
 
         return new_object
