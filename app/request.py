@@ -1,14 +1,14 @@
-from app import app
+
 import urllib.request,json
 from .Models import News
+from app import app
 
 News=News.News
 source = news.source
-api_key = app.config['NEWS_API_KEY']
 
-# Getting the movie base url
-news_description= app.config["NEWS_API_BASE_URL"]
-source_base_url = app.config["NEWS_SOURCE_API_BASE_URL"]
+api_key = app.config['NEWS_API_KEY']
+source_base_url= app.config["NEWS_SOURCES_BASE_URL"]
+News_base_url = app.config["NEWS_API_BASE_URL"]
 def get_sources(category):
         '''
         Function that gets the json response to our url request
@@ -70,16 +70,15 @@ def get_new(id):
 
         return new_object
 def search_new(new_name):
-        search_new_url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-18&sortBy=publishedAt&apiKey=870c6f91cc3244ac9013dcbecb84e54d?api_key={}&query={}'.format(api_key,new_name)
+        search_new_url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-18&sortBy=publishedAt&apiKey=870c6f91cc3244ac9013dcbecb84e54d?api_key={}&query={}'.format(api_key,new_id)
         with urllib.request.urlopen(search_new_url) as url:
                 search_new_data = url.read()
                 search_new_response = json.loads(search_new_data)
+                search_new_articles = None
 
-                search_new_results = None
-
-                if search_new_response['results']:
-                        search_new_list = search_new_response['results']
-                        search_new_results = process_results(search_new_list)
+                if search_new_response['articles']:
+                        search_new_list = search_new_response['articles']
+                        search_new_articles = process_articles(search_new_list)
 
 
-        return search_new_results
+        return search_new_articles
