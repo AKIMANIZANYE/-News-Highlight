@@ -40,7 +40,7 @@ def process_articles(sources_list):
                 url=news_item.get('url')
                 urlToImage=news_item.get('urlToImage')
                 publishedAt=news_item.get('publishedAt')
-                poster=news_item.get('poster')
+               content=news_item.get('content')
 
                 if urlToImage:
                        news_object = Source(id,title,name,author,description,url, urlToImage,publishedAt)
