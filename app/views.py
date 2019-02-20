@@ -19,8 +19,8 @@ def index():
         # if search_new:
         #         return redirect(url_for('search',new_name=search_new))
         # else:
-        print(popular_news)
-        return render_template('index.html', title = title,popular = popular_news,)
+        # print(popular_news)
+        return render_template('index.html', title = title,popular = popular_news)
                 # @app.route('/news/<int:id>')
                 # def news(id):
 
@@ -32,17 +32,18 @@ def search(new_name):
         title = f'search articles" for {new_name}'
         return render_template('search.html',news = searched_news)
 
-@app.route('/new/review/new/<int:id>', methods = ['GET','POST'])
+@app.route('/new/<id>')
 def new_review(id):
-        form = ReviewForm()
-        new= get_new(id)
+        # form = ReviewForm()
+        news= get_news(id)
+        # print(new)
 
-        if form.validate_on_submit():
-                title = form.title.data
-                name = form.name.data
-                new_name = Review(new.id,title,name,author,description,urlToImage,url,publishcontent)
-                new_review.save_review()
-                return redirect(url_for('new',id = movie.id ))
+        # if form.validate_on_submit():
+        #         title = form.title.data
+        #         name = form.name.data
+        #         new_name = Review(new.id,title,name,author,description,urlToImage,url,publishcontent)
+        #         new_review.save_review()
+        #         return redirect(url_for('new',id = movie.id ))
 
-        title = f'{new.title} review'
-        return render_template('new_review.html',title = title, review_form=form, new=new)
+        title = 'Article'
+        return render_template('news.html',title = title, news=news)

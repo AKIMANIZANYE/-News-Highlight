@@ -4,7 +4,7 @@ from .Models import News
 from app import app
 from .source import source
 
-# News=News.News
+News=News.News
 # source = news.source
 
 api_key = app.config['NEWS_API_KEY']
@@ -54,21 +54,24 @@ def get_news(id):
     with urllib.request.urlopen(get_new_details_url) as url:
         new_details_data = url.read()
         new_details_response = json.loads(new_details_data)
-
+        print(new_details_response)
         new_object = None
-        if new_details_response:
-            id = news_details_response.get('id')
-            title = news_details_response.get('title')
-            name = news_details_response.get('name')
-            author=news_details_response.get('author')
-            description=news_details_response.get('description')
-            url=news_details_response.get('url')
-            urlToImage=news_details_response.get(' urlToImage')
-            publishedAt =news_details_response.get('publishedAt')
-            content = news_details_response.get('content')
-            new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,conent)
+        abc=[]
+        if new_details_response['articles']:
+                for news_item in new_details_response['articles']:
+                        # id = news_item.get('id')
+                        title = news_item.get('title')
+                        # name = news_item.get('name')
+                        author=news_item.get('author')
+                        description=news_item.get('description')
+                        url=news_item.get('url')
+                        urlToImage=news_item.get('urlToImage')
+                        publishedAt =news_item.get('publishedAt')
+                        content = news_item.get('content')
+                        new_object = News(title,author,description,url,urlToImage,publishedAt,content)
+                        abc.append(new_object)
 
-    return new_object
+        return abc
 def search_new(new_name):
     search_new_url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-18&sortBy=publishedAt&apiKey=870c6f91cc3244ac9013dcbecb84e54d?api_key={}&query={}'.format(api_key,new_id)
     with urllib.request.urlopen(search_new_url) as url:
