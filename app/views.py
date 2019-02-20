@@ -19,6 +19,7 @@ def index():
         # if search_new:
         #         return redirect(url_for('search',new_name=search_new))
         # else:
+        print(popular_news)
         return render_template('index.html', title = title,popular = popular_news,)
                 # @app.route('/news/<int:id>')
                 # def news(id):

@@ -2,9 +2,10 @@
 import urllib.request,json
 from .Models import News
 from app import app
+from .source import source
 
-News=News.News
-source = News.source
+# News=News.News
+# source = news.source
 
 api_key = app.config['NEWS_API_KEY']
 source_base_url= app.config["NEWS_SOURCES_BASE_URL"]
@@ -25,11 +26,11 @@ def get_sources(category):
                 if get_sources_response['sources']:
                         sources_articles_list = get_sources_response['sources']
                         sources_articles = process_articles(sources_articles_list)
-        
+        # print(sources_articles)
         return sources_articles
 
 def process_articles(sources_list):
-    print(sources_list)
+#     print(sources_list)
     source_articles= []
     for news_item in sources_list:
                    
