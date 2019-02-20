@@ -65,7 +65,7 @@ def get_new(id):
                         url=news_details_response.get('url')
                         urlToImage=news_details_response.get(' urlToImage')
                         publishedAt =news_details_response.get('publishedAt')
-                        poster = news_details_response.get('poster')
+                       content = news_details_response.get('content')
                         new_object = News(id,title,name,author,description,url,urlToImage,publishedAt,poster)
 
         return new_object
