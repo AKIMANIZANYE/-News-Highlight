@@ -1,6 +1,6 @@
 #project name
  News-Highlight
- Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com>
+# Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com>
 Date:   Tue Feb 19 14:20:53 2019 +0200
 
 #Descrption of the project
@@ -11,7 +11,9 @@ On the homepage user will see form that will have option of reseaching the name 
 inter the name of news   submit Read the name of the  News views the  news  you  can see the Image there articles the  date has been wrotten that news.
 
 ecifications
- ## Behavior     View Articles on Everything ## Output
+ # Behavior     View Articles on Everything
+ 
+ #Output
 View Business sources
 View Entertainment sources
 View Sports sources
@@ -25,7 +27,7 @@ Here there will be difference kind of news so is thechoies of the person to choo
 for the BUSINESS section ,the ENTERTAINMENT section,the SPORTS section,page that displays articles on Top Headlines it all missed.
 
 
-## Prerequiites
+# Prerequiites
 - Python 3.6
  
 ## Set-up and Installation
