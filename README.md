@@ -20,4 +20,8 @@ Boostrap
 # contact
 Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority Link:https://github.com/AKIMANIZANYE/Login.git
 #License and Copyright
+
+.Permision of reading code         .You are not allowed to edit any file
+.permission of testing website      .You are  not allowed to move  anyfile or folder
+.Permision of Riview                 .You are not allowed to host it again  this website.
 AKIMANIZANYE @2019
