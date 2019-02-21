@@ -45,7 +45,7 @@ No known errors if found drop a message on my profile
 
 
 # contact
-Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority 
+Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority :https://github.com/AKIMANIZANYE/-News-Highlight.git
 #License and Copyright
 
 .Permision of reading code         .You are not allowed to edit any file
