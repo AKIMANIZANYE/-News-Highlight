@@ -2,7 +2,7 @@
 import urllib.request,json
 from .Models import News
 from app import app
-from .source import source
+from app.Models.source import source
 
 News=News.News
 # source = news.source
