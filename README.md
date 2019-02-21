@@ -24,4 +24,4 @@ Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudin
 .Permision of reading code         .You are not allowed to edit any file
 .permission of testing website      .You are  not allowed to move  anyfile or folder
 .Permision of Riview                 .You are not allowed to host it again  this website.
-AKIMANIZANYE @2019
+AKIMANIZANYE @2019# News
