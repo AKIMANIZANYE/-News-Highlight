@@ -8,28 +8,35 @@
 {% endblock %}
 {% block content%}
 <div class="container">
+    <h2 style="color:maroon; text-align:center">News Headlines</h2>
+    <hr>
 
     <!-- Poster background -->
-    <div class="row">
-        {% for new in news %}
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{new.poster}}) no-repeat center center">
-            <img src="{{new.urlImage}}" height="200px, width=50px",float="no-repeat center center">
-            <!-- <p>{{new.urlImage}}</p> -->
+    <div class="well">
+        <div class="row">
+            
+            {% for new in news %}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 posterPath" style="background: url({{new.poster}}) no-repeat center center">
+                        <img src="{{new.urlImage}}" height="200px, width=50px",float="no-repeat center center">
+                        <!-- <p>{{new.urlImage}}</p> -->
+                    </div>
+                    <br>
+            
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 news-details">
+                        
+                        <h3>{{ new.title }}</h3>
+                        <!-- <p class="name"> {{ new.name }}</p> -->
+                        <p class="author"> {{ new.author}}</p> 
+                        <p class="description">{{ new.description}} </p>
+                        <p class="image"> {{ new.urlImage }}</p>
+                             <p class="url"> {{ new.url }}</p>
+                            <p class="date">{{ new.publishedAt}}</p>
+                            <p class="content"> {{ new.content }}</p>
+                        <button><a class="ratings" href="{{new.url}}" class="claudine" style="color: blue">Read more</a></button>
+            
+                    </div>
+                    {%endfor%}
         </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-details">
-            <h3>{{ new.title }}</h3>
-            <!-- <p class="name"> {{ new.name }}</p> -->
-            <p class="author"> {{ new.author}}</p> 
-            <p class="description">{{ new.description}} </p>
-            <p class="image"> {{ new.urlImage }}</p>
-                 <p class="url"> {{ new.url }}</p>
-                <p class="date">{{ new.publishedAt}}</p>
-                <p class="content"> {{ new.content }}</p>
-            <a class="ratings" href="/new/review/new/{{new.id}}" class="claudine"> Write a new review</a>
-
-        </div>
-        {%endfor%}
     </div>
 
 </div>
