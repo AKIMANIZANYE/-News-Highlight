@@ -1,4 +1,4 @@
-#project name
+## project name
  News-Highlight
 # Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com>
 Date:   Tue Feb 19 14:20:53 2019 +0200
@@ -20,13 +20,6 @@ View Sports sources
 View Top Headlines Articles
 View Articles on Everything
 
-
-
-## Output
-Here there will be difference kind of news so is thechoies of the person to choose what they want
-for the BUSINESS section ,the ENTERTAINMENT section,the SPORTS section,page that displays articles on Top Headlines it all missed.
-
-
 # Prerequiites
 - Python 3.6
  
@@ -45,10 +38,10 @@ No known errors if found drop a message on my profile
 - Bootstrap
 - Flask
 
-
-# contact
+## contact
 Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority :https://github.com/AKIMANIZANYE/-News-Highlight.git
-#License and Copyright
+
+## License and Copyright
 
 .Permision of reading code         .You are not allowed to edit any file
 .permission of testing website      .You are  not allowed to move  anyfile or folder
